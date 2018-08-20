@@ -7,9 +7,10 @@ routes.get('/', (req, res) => {
 			res.status(200).json(rows);
 		})
 		.catch(err => {
-			db.close().then(() => {
-				res.send(err);
-			});
+			db.close()
+				.then(() => {
+					res.send(err);
+				});
 		});
 });
 
